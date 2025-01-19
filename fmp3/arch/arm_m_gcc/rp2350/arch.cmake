@@ -28,7 +28,7 @@ list(APPEND FMP3_ARCH_C_FILES
     ${ARCHDIR}/rp2350/chip_kernel_impl.c
 )
 
-if(NOT DEFINED TOPPERS_OMIT_SERIAL)
+if(NOT DEFINED TOPPERS_OMIT_CHIP_SERIAL)
     list(APPEND FMP3_ARCH_C_FILES
         ${ARCHDIR}/rp2350/chip_serial.c
     )
