@@ -40,10 +40,6 @@ include(fmp3/fmp3_pico_sdk.cmake)
 
 add_executable(fmp3_pico_sdk
     fmp3_pico_sdk.c
-    fmp3/library/log_output.c
-    fmp3/library/vasyslog.c
-    fmp3/syssvc/syslog.c
-    fmp3/syssvc/banner.c
 )
 
 pico_set_program_name(fmp3_pico_sdk "fmp3_pico_sdk")
