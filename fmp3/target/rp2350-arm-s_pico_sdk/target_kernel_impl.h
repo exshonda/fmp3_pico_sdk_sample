@@ -69,7 +69,14 @@
  */
 #define DEFAULT_IDSTKSZ 0x0100U
 
+/*
+ *  ジャイアントロック用のスピンロック番号の定義
+ */
+#define SPINLOCK_NO_FOR_GIANT_LOCK      14
+
 #ifndef TOPPERS_MACRO_ONLY
+
+extern void		sta_ker(void) throw();
 
 /*
  *  ターゲットシステム依存の初期化（マスタのみ）

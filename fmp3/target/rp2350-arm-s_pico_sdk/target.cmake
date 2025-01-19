@@ -51,8 +51,6 @@ list(APPEND FMP3_COMPILE_DEFS
 )
 
 list(APPEND FMP3_TARGET_C_FILES
-    #${TARGETDIR}/bootrom.S
-    #${TARGETDIR}/bs2_default_padded_checksummed.S
     ${TARGETDIR}/target_kernel_impl.c
     ${TARGETDIR}/target_timer.c
     ${TARGETDIR}/target_serial.c

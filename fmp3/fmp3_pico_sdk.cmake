@@ -1,5 +1,19 @@
 set(FMP3_ROOT_DIR ${CMAKE_CURRENT_LIST_DIR})
 
+if (PICO_PLATFORM STREQUAL "rp2040")
+    set(FMP3_TARGET rp2040_pico_sdk)
+elseif (PICO_PLATFORM STREQUAL "rp2350-arm-s")
+    set(FMP3_TARGET rp2350-arm-s_pico_sdk)
+elseif (PICO_PLATFORM STREQUAL "rp2350-riscv")
+    message(FATAL_ERROR "not suported ${PICO_PLATFORM}")
+else()
+    message(FATAL_ERROR "not suported ${PICO_PLATFORM}")
+endif()
+
+list(APPEND FMP3_COMPILE_DEFS
+    OMIT_ISTACK
+)
+
 function(fmp3_set_pico_sdk_options TARGET)
   target_compile_definitions(${TARGET}
     PUBLIC PICO_RUNTIME_NO_INIT_INSTALL_RAM_VECTOR_TABLE

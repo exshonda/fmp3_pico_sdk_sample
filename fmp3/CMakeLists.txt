@@ -1,18 +1,6 @@
 # TOPPERS/FMP3 カーネルライブラリ（libfmp3.a）
 cmake_minimum_required(VERSION 3.13)
 
-set(FMP3_ROOT_DIR ${CMAKE_CURRENT_LIST_DIR} PARENT_SCOPE)
-
-if (PICO_PLATFORM STREQUAL "rp2040")
-    set(FMP3_TARGET rp2040_pico_sdk)
-elseif (PICO_PLATFORM STREQUAL "rp2350-arm-s")
-    set(FMP3_TARGET rp2350-arm-s_pico_sdk)
-elseif (PICO_PLATFORM STREQUAL "rp2350-riscv")
-    message(FATAL_ERROR "not suported ${PICO_PLATFORM}")
-else()
-    message(FATAL_ERROR "not suported ${PICO_PLATFORM}")
-endif()
-
 project(fmp3 C ASM)
 
 list(APPEND FMP3_SYMVAL_TABLES
@@ -29,7 +17,6 @@ list(APPEND FMP3_INCLUDE_DIRS
 
 list(APPEND FMP3_COMPILE_DEFS
     TOPPERS_OMIT_TECS
-    OMIT_ISTACK
 )
 
 # ターゲット依存部の情報を読み込み
@@ -233,10 +220,10 @@ add_library(fmp3 STATIC
     kernel/time_event.c
     kernel/time_manage.c
     kernel/wait.c
-    ${KERNEL_CFG_DIR}/kernel_cfg.c
+    ${CFG_GEN_C_FILES}
 )
 
-#add_dependencies(fmp3 ${KERNEL_CFG_FILE})
+add_dependencies(fmp3 generate_cfg_gen_files)
 
 target_include_directories(fmp3
     PUBLIC ${FMP3_INCLUDE_DIRS}
