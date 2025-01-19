@@ -76,8 +76,6 @@
 
 #ifndef TOPPERS_MACRO_ONLY
 
-extern void		sta_ker(void) throw();
-
 /*
  *  ターゲットシステム依存の初期化（マスタのみ）
  */

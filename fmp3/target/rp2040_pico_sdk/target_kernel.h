@@ -101,6 +101,12 @@
 
 #endif /* USE_TIM_AS_HRT */
 
+#ifndef TOPPERS_MACRO_ONLY
+
+extern void		sta_ker(void) throw();
+
+#endif /* TOPPERS_MACRO_ONLY */
+
 /*
  * チップで共通な定義
  */

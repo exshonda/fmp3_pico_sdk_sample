@@ -344,7 +344,6 @@ extern bool_t	sns_loc(void) throw();
 extern bool_t	sns_dsp(void) throw();
 extern bool_t	sns_dpn(void) throw();
 extern bool_t	sns_ker(void) throw();
-extern void		sta_ker(void) throw();
 extern ER		ext_ker(void) throw();
 
 /*
