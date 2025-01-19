@@ -33,7 +33,7 @@ project(fmp3_pico_sdk C CXX ASM)
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
-# FMP3のpico-SDK用のCMakeファイルをインクルード
+# TOPPERS/FMP3 の Raspberry Pi Pico SDK 用のコンパイラ定義をインクルード
 include(fmp3/fmp3_pico_sdk.cmake)
 
 # Add executable. Default name is the project name, version 0.1
@@ -53,15 +53,17 @@ pico_set_program_version(fmp3_pico_sdk "0.1")
 pico_enable_stdio_uart(fmp3_pico_sdk 0)
 pico_enable_stdio_usb(fmp3_pico_sdk 1)
 
-# FMP3の設定
+# TOPPERS/FMP3 のカーネルオブジェクト定義のcfgファイルを設定
 set(FMP3_APP_CFG_FILE ${PROJECT_SOURCE_DIR}/fmp3_pico_sdk.cfg)
 
 list(APPEND FMP3_INCLUDE_DIRS
     ${FMP3_ROOT_DIR}/sample
 )
 
+# TOPPERS/FMP3 のライブラリを追加
 add_subdirectory(fmp3)
 
+# TOPPERS/FMP3 付属のソースファイルを追加
 include(fmp3/library/library.cmake)
 include(fmp3/syssvc/syssvc.cmake)
 
@@ -78,8 +80,10 @@ target_include_directories(fmp3_pico_sdk PRIVATE
   ${PROJECT_SOURCE_DIR}
 )
 
+# TOPPERS/FMP3 を使うための Raspberry Pi Pico SDK の設定
 fmp3_set_pico_sdk_options(fmp3_pico_sdk)
 
 pico_add_extra_outputs(fmp3_pico_sdk)
 
+# TOPPERS/FMP3 のチェックを行う（シンボルがGCされるとエラーになるので省略）
 #fmp3_cfg_check(fmp3_pico_sdk)
