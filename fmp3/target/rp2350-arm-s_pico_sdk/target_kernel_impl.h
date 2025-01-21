@@ -74,6 +74,11 @@
  */
 #define SPINLOCK_NO_FOR_GIANT_LOCK      14
 
+/*
+ *  ネイティブスピンロックの最大値
+ */
+#define TMAX_NATIVE_SPN                 31 /* PICO_SPINLOCK_ID_CLAIM_FREE_LAST */
+
 #ifndef TOPPERS_MACRO_ONLY
 
 /*
