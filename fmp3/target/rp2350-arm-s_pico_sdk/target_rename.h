@@ -23,4 +23,11 @@
 
 #include "chip_rename.h"
 
+#undef core_exc_entry
+#define core_exc_entry				isr_invalid
+#undef svc_handler
+#define svc_handler					isr_svcall
+#undef pendsv_handler
+#define pendsv_handler				isr_pendsv
+
 #endif /* TOPPERS_TARGET_RENAME_H */
