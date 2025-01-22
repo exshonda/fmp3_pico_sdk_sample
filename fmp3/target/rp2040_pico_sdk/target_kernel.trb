@@ -277,8 +277,6 @@ extern void isr_invalid(void);
 void isr_nmi(void) { isr_invalid(); }
 void isr_hardfault(void) { isr_invalid(); }
 
-TOPPERS_EMPTY_LABEL(const FP* const , _kernel_p_vector_table);
-
 /*
  *  割込みエントリ
  */

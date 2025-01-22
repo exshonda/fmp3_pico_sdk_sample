@@ -168,7 +168,7 @@ $INHNO_VALID[prcid].size.times do |index|
     if inh && (inh[:inhatr] & $TA_NONKERNEL != 0)
         $kernelCfgC.add "void #{isr_name}(void) { (((void (*)(void)))#{inh[:inthdr]})(); } /* #{inhno & 0xFFFF} */"
     else
-	    $kernelCfgC.add("extern void #{isr_name}(void) __attribute((alias(\"_kernel_target_int_entry\"))); /* #{$INHNO_VALID[prcid][index] & 0xFFFF} */")
+        $kernelCfgC.add("extern void #{isr_name}(void) __attribute((alias(\"_kernel_target_int_entry\"))); /* #{$INHNO_VALID[prcid][index] & 0xFFFF} */")
     end
 end
 $kernelCfgC.add
@@ -245,8 +245,6 @@ $kernelCfgC.append(<<EOS)
 extern void isr_invalid(void);
 void isr_nmi(void) { isr_invalid(); }
 void isr_hardfault(void) { isr_invalid(); }
-
-TOPPERS_EMPTY_LABEL(const FP* const , _kernel_p_vector_table);
 
 /*
  *  割込みエントリ

@@ -13,6 +13,7 @@ endif()
 
 list(APPEND FMP3_COMPILE_DEFS
     OMIT_ISTACK
+    TOPPERS_OMIT_VECTOR_TABLE
 )
 
 function(fmp3_set_pico_sdk_options TARGET)
