@@ -77,7 +77,7 @@
 /*
  *  ネイティブスピンロックの最大値
  */
-#define TMAX_NATIVE_SPN                 31 /* PICO_SPINLOCK_ID_CLAIM_FREE_LAST */
+#define TMAX_NATIVE_SPN                 7 /* < PICO_SPINLOCK_ID_ATOMIC 8 */
 
 #ifndef TOPPERS_MACRO_ONLY
 

@@ -462,15 +462,21 @@ void software_term_hook()
 extern void tPutLogSIOPort_initialize(void);
 #endif
 
+extern const ID tmax_spnid;
+
 /*
  * ターゲット依存部 初期化処理
  */
 void target_initialize(PCB *p_my_pcb)
 {
+    int i;
+
     if (p_my_pcb->prcid == PRC1) {
         /* Reset SIO (hardware spinlock) */
-        for (int i = PICO_SPINLOCK_ID_OS1; i <= PICO_SPINLOCK_ID_STRIPED_LAST; ++i) {
-            sil_wrw_mem(RP2040_SIO_SPINLOCKn(i), 0);
+        sil_wrw_mem(RP2350_SIO_SPINLOCKn(PICO_SPINLOCK_ID_OS1), 0);
+        sil_wrw_mem(RP2350_SIO_SPINLOCKn(PICO_SPINLOCK_ID_OS2), 0);
+        for (i = 0; i < tmax_spnid; i++) {
+            sil_wrw_mem(RP2350_SIO_SPINLOCKn(i), 0);
         }
     }
     /*

@@ -49,7 +49,7 @@
 #
 #  ネイティブスピンロックの生成
 #
-$rp2350_spinlock_index = 24 # PICO_SPINLOCK_ID_CLAIM_FREE_FIRST
+$rp2350_spinlock_index = 0
 def GenerateNativeSpn(params)
     ret = "(intptr_t)RP2350_SIO_SPINLOCKn(#{$rp2350_spinlock_index})"
     $rp2350_spinlock_index += 1
