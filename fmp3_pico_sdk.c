@@ -25,6 +25,9 @@ int main()
 {
     stdio_init_all();
 
+    while(!stdio_usb_connected())
+        Asm("WFI");;
+
     Asm("cpsid f":::"memory");
 
     sta_ker();
