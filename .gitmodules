@@ -1,0 +1,3 @@
+[submodule "fmp3"]
+	path = fmp3
+	url = https://github.com/exshonda/fmp3_pico_sdk.git
