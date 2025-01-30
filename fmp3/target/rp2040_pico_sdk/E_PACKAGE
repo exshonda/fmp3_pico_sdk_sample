@@ -1,7 +1,0 @@
-E_PACKAGE fmp3_rp2040_pico_sdk
-VERSION %date
-
-INCLUDE MANIFEST
-INCLUDE ../../MANIFEST
-INCLUDE ../../arch/arm_m_gcc/MANIFEST
-INCLUDE ../../arch/arm_m_gcc/rp2040/MANIFEST

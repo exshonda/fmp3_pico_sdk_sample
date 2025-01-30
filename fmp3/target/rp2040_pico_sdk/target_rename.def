@@ -1,5 +1,0 @@
-INCLUDE	"arm_m_gcc/rp2040/chip"
-
-#target_config.c
-target_initialize
-target_exit
