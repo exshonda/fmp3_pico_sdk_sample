@@ -7,6 +7,16 @@
 
 pico-sdk でサポートされるボードで使えます。
 
+## リポジトリのクローン
+
+`fmp3`フォルダはサブモジュールとなっているので、下記のコマンドでサブモジュールもクローンしてください。
+
+```bash
+git clone https://github.com/exshonda/fmp3_pico_sdk_sample.git
+cd fmp3_pico_sdk_sample
+git submodule update --init
+```
+
 ## ビルド方法
 
 Pico 拡張機能のビルド機能をそのまま使用します。
