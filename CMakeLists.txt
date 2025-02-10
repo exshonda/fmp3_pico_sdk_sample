@@ -57,11 +57,11 @@ list(APPEND FMP3_INCLUDE_DIRS
 )
 
 # TOPPERS/FMP3 のライブラリを追加
-add_subdirectory(fmp3)
+add_subdirectory(${FMP3_ROOT_DIR} fmp3)
 
 # TOPPERS/FMP3 付属のソースファイルを追加
-include(fmp3/library/library.cmake)
-include(fmp3/syssvc/syssvc.cmake)
+include(${FMP3_ROOT_DIR}/library/library.cmake)
+include(${FMP3_ROOT_DIR}/syssvc/syssvc.cmake)
 
 # Add the standard library to the build
 target_link_libraries(fmp3_pico_sdk
@@ -77,9 +77,9 @@ target_include_directories(fmp3_pico_sdk PRIVATE
 )
 
 # TOPPERS/FMP3 を使うための Raspberry Pi Pico SDK の設定
-fmp3_set_pico_sdk_options(fmp3_pico_sdk)
+fmp3_set_pico_sdk_options(${CMAKE_PROJECT_NAME})
 
 pico_add_extra_outputs(fmp3_pico_sdk)
 
 # TOPPERS/FMP3 のチェックを行う（シンボルがGCされるとエラーになるので省略）
-#fmp3_cfg_check(fmp3_pico_sdk)
+#fmp3_cfg_check(${CMAKE_PROJECT_NAME})
