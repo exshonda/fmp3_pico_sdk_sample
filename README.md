@@ -31,6 +31,10 @@ Pico 拡張機能で作成したプロジェクトに TOPPERS/FMP3 を追加す�
 
 Pico 拡張機能でプロジェクトを作成し、そのプロジェクトの`CMakeLists.txt`を編集して、TOPPERS/FMP3 を配置したフォルダをビルド対象に含めるようにします。
 
+サンプルアプリの`CMakeLists.txt`を見て編集箇所を確認していください。
+
+<https://github.com/exshonda/fmp3_pico_sdk_sample/blob/main/CMakeLists.txt>
+
 まず、`fmp3_pico_sdk.cmake`ファイルのインクルードを行うため、下記の行を追加します。
 
 - プロジェクトフォルダ配下に`fmp3`フォルダを配置した場合
