@@ -34,7 +34,7 @@ project(fmp3_pico_sdk C CXX ASM)
 pico_sdk_init()
 
 # TOPPERS/FMP3 の Raspberry Pi Pico SDK 用のコンパイラ定義をインクルード
-include(fmp3/fmp3_pico_sdk.cmake)
+include(../fmp3/fmp3_pico_sdk.cmake)
 
 # Add executable. Default name is the project name, version 0.1
 
