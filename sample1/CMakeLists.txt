@@ -47,8 +47,8 @@ pico_set_program_name(sample1_pico_sdk "sample1_pico_sdk")
 pico_set_program_version(sample1_pico_sdk "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(sample1_pico_sdk 0)
-pico_enable_stdio_usb(sample1_pico_sdk 1)
+pico_enable_stdio_uart(sample1_pico_sdk 1)
+pico_enable_stdio_usb(sample1_pico_sdk 0)
 
 # TOPPERS/FMP3 のカーネルオブジェクト定義のcfgファイルを設定
 set(FMP3_APP_CFG_FILE ${FMP3_ROOT_DIR}/sample/sample1.cfg)
